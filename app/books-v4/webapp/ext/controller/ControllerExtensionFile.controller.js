@@ -16,34 +16,11 @@ sap.ui.define(
           onInit: function () {
             // you can access the Fiori elements extensionAPI via this.base.getExtensionAPI
             var oModel = this.base.getExtensionAPI().getModel();
-            // this.getView()
-            //   .byId(
-            //     "booksv4::BooksList--fe::table::Books::LineItem::CustomAction::ListReportext::ActionToolbarAction"
-            //   )
-            //   .setVisible(false);
-          },
-          editFlow: {
-            onBeforeEdit: function () {
-              debugger;
-            },
-            customMassEditSave: function () {
-              debugger;
-            },
-            editDocument: function () {
-              debugger;
-            },
-            invokeAction: function () {
-              debugger;
-            },
-            onAfterEdit: function () {
-              debugger;
-            },
-            onAfterSave: function () {
-              debugger;
-            },
-            updateDocument: function () {
-              debugger;
-            },
+            this.getView()
+              .byId(
+                "booksv4::BooksList--fe::table::Books::LineItem::CustomAction::ListReportext::ActionToolbarAction"
+              )
+              .setVisible(false);
           },
         },
       }

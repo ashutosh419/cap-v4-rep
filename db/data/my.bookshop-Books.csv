@@ -1,3 +1,8 @@
-ID,title,stock
-1,Wuthering Heights,100
-2,Jane Eyre,500
+ID,title,Subtitle,author,stock,price,currency_code
+101,Book 101,Subtitle 101,Author 101,101,101.01,USD
+102,Book 102,Subtitle 102,Author 102,102,102.02,USD
+103,Book 103,Subtitle 103,Author 103,103,103.03,USD
+104,Book 104,Subtitle 104,Author 104,104,104.04,USD
+105,Book 105,Subtitle 105,Author 105,105,105.05,USD
+106,Book 106,Subtitle 106,Author 106,106,106.06,USD
+107,Book 107,Subtitle 107,Author 107,107,107.07,USD

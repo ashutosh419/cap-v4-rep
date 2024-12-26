@@ -4,5 +4,5 @@ service CatalogService {
     // @odata.draft.enabled: true
     // @odata.draft.bypass : true
     entity Books as projection on my.Books;
-    action markAsRead(Title : String) returns String;
+    action updateStock(ID : String, stock : String) returns String;
 }
