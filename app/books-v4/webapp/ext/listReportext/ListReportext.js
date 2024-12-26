@@ -10,137 +10,23 @@ sap.ui.define(
         var oView = this.editFlow.getView();
         var oModel = oView.getModel();
         oView.byId("booksv4::BooksList--fe::table::Books::LineItem").rebind();
-        // oView
-        //   .byId(
-        //     "booksv4::BooksList--fe::table::Books::LineItem::CustomAction::ListReportext2::ActionToolbarAction"
-        //   )
-        //   .setVisible(true);
-        // oView
-        //   .byId(
-        //     "booksv4::BooksList--fe::table::Books::LineItem::CustomAction::ListReportext::ActionToolbarAction"
-        //   )
-        //   .setVisible(false);
 
-        // const req1 = this.editFlow
-        //   .invokeAction("/markAsRead", {
-        //     model: oModel,
-        //     skipParameterDialog: true,
-        //     parameterValues: [{ name: "Title", value: "Harry Potter" }], // Payload sent in the request body
-        //     invocationGrouping: "ChangeSet",
-        //   })
-        //   .then((oResponse) => {
-        //     console.log("Action response:", oResponse);
-        //   });
-        // const req2 = this.editFlow
-        //   .invokeAction("/markAsRead", {
-        //     model: oModel,
-        //     skipParameterDialog: true,
-        //     parameterValues: [{ name: "Title", value: "Twilight" }], // Payload sent in the request body
-        //     invocationGrouping: "ChangeSet",
-        //   })
-        //   .then((oResponse) => {
-        //     console.log("Action response:", oResponse);
-        //   });
-
-        // Promise.all([req1, req2])
-        //   .then(([data1, data2]) => {
-        //     console.log(data1, data2);
-        //   })
-        //   .catch((error) => {
-        //     console.error(error);
-        //   });
-
-        // this.editFlow
-        //   .invokeAction("/markAsRead", {
-        //     model: oModel,
-        //     skipParameterDialog: true,
-        //     parameterValues: [{ name: "Title", value: "Harry Potter" }], // Payload sent in the request body
-        //     invocationGrouping: "ChangeSet",
-        //   })
-        //   .then((oResponse) => {
-        //     console.log("Action response:", oResponse);
-        //   })
-        //   .catch((oError) => {
-        //     console.error("Error calling action:", oError);
-        //   });
-        // debugger;
-        // this.editFlow
-        //   .invokeAction("/markAsRead", {
-        //     model: oModel,
-        //     skipParameterDialog: true,
-        //     parameterValues: [{ name: "Title", value: "Twilight" }], // Payload sent in the request body
-        //     invocationGrouping: "ChangeSet",
-        //   })
-        //   .then((oResponse) => {
-        //     console.log("Action response:", oResponse);
-        //   })
-        //   .catch((oError) => {
-        //     console.error("Error calling action:", oError);
-        //   });
-
-        // const aActions = [
-        //   {
-        //     name: "/markAsRead",
-        //     parameterValues: [{ name: "Title", value: "Harry Potter" }],
-        //   },
-        //   {
-        //     name: "/markAsRead",
-        //     parameterValues: [{ name: "Title", value: "Twilight" }],
-        //   },
-        // ];
-
-        // // const oModel = this.getView().getModel();
-
-        // this.editFlow
-        //   .invokeAction(aActions[0].name, {
-        //     model: oModel,
-        //     skipParameterDialog: true,
-        //     parameterValues: aActions[0].parameterValues,
-        //     invocationGrouping: "ChangeSet", // Group these actions in one batch
-        //   })
-        //   .then(() => {
-        //     return this.editFlow.invokeAction(aActions[1].name, {
-        //       model: oModel,
-        //       skipParameterDialog: true,
-        //       parameterValues: aActions[1].parameterValues,
-        //       invocationGrouping: "ChangeSet", // Part of the same change set
-        //     });
-        //   })
-        //   .then(() => {
-        //     console.log("All actions executed in a single batch");
-        //   })
-        //   .catch((oError) => {
-        //     console.error("Error in batch execution", oError);
-        //   });
-
-        const sActionPath = "/markAsRead"; // Unbound action path
-
-        // Create the binding context for the unbound action
-        const oContext = oModel.bindContext(sActionPath, null, {
-          groupId: "BatchGroup",
-        });
-
-        // Set the action parameters
-        oContext.setParameter("Title", "Harry Potter");
-
-        // Execute the action
-        oContext
-          .execute()
-          .then(() => {
-            console.log("Action executed successfully");
-          })
-          .catch((oError) => {
-            console.error("Error executing action", oError);
+        const titles = ["Harry Potter", "Twilight", "The Hobbit"];
+        titles.forEach((title) => {
+          const oBinding = oModel.bindContext("/markAsRead(...)", null, {
+            groupId: "BatchGroup",
           });
-
-        // Submit the batch (if needed for grouping multiple actions)
+          oBinding.setParameter("Title", title);
+          oBinding.execute();
+        });
+        // Submit the batch group
         oModel
           .submitBatch("BatchGroup")
           .then(() => {
-            console.log("Batch submitted successfully");
+            console.log("Batch executed successfully");
           })
           .catch((oError) => {
-            console.error("Error submitting batch", oError);
+            console.error("Error executing batch:", oError);
           });
       },
       onEdit: function (oEvent) {
