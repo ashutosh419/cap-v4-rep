@@ -7,7 +7,7 @@ entity Books {
       title         : String;
       Subtitle      : String;
       author        : String;
-      stock         : Integer;
+      stock         : Decimal(9, 2);
       price         : Decimal(9, 2);
       currency_code : String;
 
