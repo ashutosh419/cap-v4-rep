@@ -1,4 +1,4 @@
-# Getting Started
+# BookShop List Report
 
 Welcome to your new project.
 
@@ -13,13 +13,11 @@ File or Folder | Purpose
 `readme.md` | this getting started guide
 
 
-## Next Steps
+## Things it performs
 
-- Open a new terminal and run `cds watch`
-- (in VS Code simply choose _**Terminal** > Run Task > cds watch_)
-- Start adding content, for example, a [db/schema.cds](db/schema.cds).
+- List Report using CAP Project with GET Service and unbound action
+- Making the List Report Editable
+- Calling the action from List Report to save the changes
+- Button Visibility Control and use of editFlow in Fiori
 
 
-## Learn More
-
-Learn more at https://cap.cloud.sap/docs/get-started/.
