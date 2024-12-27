@@ -1,7 +1,7 @@
 namespace my.bookshop;
 
 entity Books {
-  key ID            : Integer;
+  key ID            : String;
 
       @Common.Label: 'Book Title'
       title         : String;

@@ -53,23 +53,11 @@ sap.ui.define(
                       value: "{" + sPath + "}",
                       editable: this._editableColumns,
                       change: (oEvent) => {
-                        let aRow = oEvent
-                            .getSource()
-                            .getParent()
-                            .getAggregation("cells"),
-                          oRow = {};
                         let bChanged = false;
-                        aRow.forEach((value) => {
-                          if (value.getBindingInfo("text")) {
-                            oRow[
-                              `${value.getBindingInfo("text").parts[0].path}`
-                            ] = value.getText();
-                          } else if (value.getBindingInfo("value")) {
-                            oRow[
-                              `${value.getBindingInfo("value").parts[0].path}`
-                            ] = value.getValue();
-                          }
-                        });
+                        let oRow = oEvent
+                          .getSource()
+                          .getBindingContext()
+                          .getObject();
                         console.log(oRow);
                         inputparams.forEach((value, index) => {
                           if (value.ID === oRow.ID) {
