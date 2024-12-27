@@ -107,6 +107,7 @@ sap.ui.define(
           .then(() => {
             console.log("Batch executed successfully");
             MessageToast.show("Batch executed successfully");
+            inputparams = [];
           })
           .catch((oError) => {
             console.error("Error executing batch:", oError);
