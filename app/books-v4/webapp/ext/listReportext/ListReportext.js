@@ -62,8 +62,7 @@ sap.ui.define(
                         inputparams.forEach((value, index) => {
                           if (value.ID === oRow.ID) {
                             bChanged = true;
-                            inputparams[index].stock =
-                              oEvent.getParameter("newValue");
+                            inputparams[index].stock = oRow.stock;
                           }
                         });
 
