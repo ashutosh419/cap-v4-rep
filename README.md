@@ -19,5 +19,6 @@ File or Folder | Purpose
 - Making the List Report Editable
 - Calling the action from List Report to save the changes
 - Button Visibility Control and use of editFlow in Fiori
+- Disable Automatic PATCH calls when editing the List Report fields (Temporarily by disabling TwoWay Binding)
 
 
