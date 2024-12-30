@@ -16,9 +16,11 @@ sap.ui.define(
           onInit: function () {
             // you can access the Fiori elements extensionAPI via this.base.getExtensionAPI
             var oModel = this.base.getExtensionAPI().getModel();
+
             this.getView()
               .byId(
-                "booksv4::BooksList--fe::table::Books::LineItem::CustomAction::ListReportext::ActionToolbarAction"
+                "booksv4::BooksList--fe::table::Books::LineItem::CustomAction::ListReportext"
+                // "booksv4::BooksList--fe::table::Books::LineItem::CustomAction::ListReportext::ActionToolbarAction"
               )
               .setVisible(false);
           },

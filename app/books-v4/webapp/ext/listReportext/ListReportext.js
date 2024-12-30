@@ -12,12 +12,14 @@ sap.ui.define(
       oModel.setDefaultBindingMode("OneWay");
       oView
         .byId(
-          "booksv4::BooksList--fe::table::Books::LineItem::CustomAction::ListReportext::ActionToolbarAction"
+          "booksv4::BooksList--fe::table::Books::LineItem::CustomAction::ListReportext"
+          // "booksv4::BooksList--fe::table::Books::LineItem::CustomAction::ListReportext::ActionToolbarAction"
         )
         .setVisible(true);
       oView
         .byId(
-          "booksv4::BooksList--fe::table::Books::LineItem::CustomAction::ListReportext2::ActionToolbarAction"
+          "booksv4::BooksList--fe::table::Books::LineItem::CustomAction::ListReportext2"
+          // "booksv4::BooksList--fe::table::Books::LineItem::CustomAction::ListReportext2::ActionToolbarAction"
         )
         .setVisible(false);
 
@@ -120,12 +122,14 @@ sap.ui.define(
         oModel.refresh();
         oView
           .byId(
-            "booksv4::BooksList--fe::table::Books::LineItem::CustomAction::ListReportext::ActionToolbarAction"
+            "booksv4::BooksList--fe::table::Books::LineItem::CustomAction::ListReportext"
+            // "booksv4::BooksList--fe::table::Books::LineItem::CustomAction::ListReportext::ActionToolbarAction"
           )
           .setVisible(false);
         oView
           .byId(
-            "booksv4::BooksList--fe::table::Books::LineItem::CustomAction::ListReportext2::ActionToolbarAction"
+            "booksv4::BooksList--fe::table::Books::LineItem::CustomAction::ListReportext2"
+            // "booksv4::BooksList--fe::table::Books::LineItem::CustomAction::ListReportext2::ActionToolbarAction"
           )
           .setVisible(true);
         let oTable = oView.byId(
