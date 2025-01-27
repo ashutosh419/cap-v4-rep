@@ -4,12 +4,8 @@ module.exports = cds.service.impl(async function () {
   this.on("updateStock", async (req) => {
     const { ID, stock } = req.data;
     console.log(`Updating Stock of Book with ID ${ID} to ${stock}.`);
-    await cds.run(UPDATE(`Books`).set({ stock }).where({ ID }));
+    await cds.run(UPDATE(`my.bookshop.Books`).set({ stock }).where({ ID }));
     return `Book ID "${ID}" has been marked as read.`;
-  });
-  this.on("UPDATE", "Books", async (req) => {
-    console.log(`PATCH Request received for entity "Books"`);
-    return `PATCH NOT IMPLEMENTED`;
   });
   this.on("defaultStock", async (req) => {
     const oDefaultStock = { ID: req.params[0], stock: "10" };

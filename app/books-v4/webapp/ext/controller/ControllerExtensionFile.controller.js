@@ -65,7 +65,12 @@ sap.ui.define(
                           if (sPath) {
                             // Replace Text control with Input control dynamically
                             let oInput = new sap.m.Input({
-                              value: "{" + sPath + "}",
+                              value: {
+                                parts: [{
+                                  path: sPath,
+                                  mode: sap.ui.model.BindingMode.OneWay
+                                }],
+                              },
                               editable: "{editModel>/edit}",
                               change: (oEvent) => {
                                 let bChanged = false;

@@ -7,12 +7,10 @@ sap.ui.define(
       onEdit: function (oEvent) {
         let oView = this.editFlow.getView();
         oView.getModel("editModel").setProperty("/edit", true);
-        oView.getModel().setDefaultBindingMode("OneWay");
       },
       onSave: function (oEvent) {
         let oView = this.editFlow.getView();
         let oModel = oView.getModel();
-        oModel.setDefaultBindingMode("TwoWay");
         oView.byId("booksv4::BooksList--fe::table::Books::LineItem").rebind();
         inputparams.forEach((value) => {
           const oBinding = oModel.bindContext("/updateStock(...)", null, {
